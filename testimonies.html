@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testimonies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="tempates.js" type="text/javascript" defer></script>
+  </head>
+  <body>
+    <nav id="main-nav"></nav>
+    <div class="mx-auto my-2" style="max-width: 700px;">
+      <div id="testimonies" class="text-light bg-dark my-2 px-3 py-3">
+        <h1>Testimonies</h1>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      let testimonies = [
+        {
+          name: "Plato",
+          msg: `I have never met another man like Eigel. In fact, I have never met him at all. I died long before he was born. 
+          How I wish I was able to witness his presence.`
+        },
+        {
+          name: "Obama (not the real one for legal reasons)",
+          msg: `What can I say about Eigel Asinas? There are no words to describe such an amazing human being. 
+          Once he masters all elements, I believe that he can save the world.`
+        },
+        {
+          name: "Anonymous",
+          msg: `Eigel has changed my life. Ever since I started worshipping him, I won the lottery, I married the girl of my dreams, 
+          and I've gained the power to speak to the dead. He truly is a miraculous being. #NotACult`
+        }
+      ]
+
+      document.getElementById("testimonies").innerHTML += `
+        ${testimonies.map(function ({name, msg}) {
+          return `
+          <figure>
+            <blockquote class="blockquote" cite="https://www.huxley.net/bnw/four.html">
+                <p>${msg}</p>
+            </blockquote>
+            <figcaption>— ${name}
+          </figure>
+        `
+        }).join("<hr/>")}
+      `
+    </script>
+  </body>
+</html>
